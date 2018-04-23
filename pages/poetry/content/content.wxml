@@ -1,0 +1,7 @@
+<!--pages/poetry/add/title.wxml-->
+<view class='container-input'>
+  <textarea placeholder='请输入诗词' focus="true"
+    bindblur='handleBlur' value='{{value}}' maxlength="-1"
+   />
+</view>
+<view class='msg' wx:if="{{msgVisible}}"><text>{{msg}}</text></view>

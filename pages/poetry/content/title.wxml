@@ -1,0 +1,7 @@
+<!--pages/poetry/add/title.wxml-->
+<view class='container-input'>
+  <input type='text' placeholder='请输入标题' focus="true" bindConfirm='handleConfirm'
+    bindblur='handleBlur' value='{{value}}'
+   />
+</view>
+<view class='msg' wx:if="{{msgVisible}}"><text>{{msg}}</text></view>

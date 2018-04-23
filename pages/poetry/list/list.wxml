@@ -1,0 +1,8 @@
+<!--pages/poetry/list/list.wxml-->
+<view class='poetry-list'>
+  <view id="{{item._id}}" class='poetry-item' bindlongpress='onLongPress'
+  bindtap='onClick' wx:for="{{poetrys}}" wx:key="_id">
+    <text class='title'>{{item.topic}}</text>
+    <image class='img' src="{{baseImgUrl + item.url}}"></image>
+  </view>
+</view>

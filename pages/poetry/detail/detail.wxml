@@ -1,0 +1,16 @@
+<!--pages/poetry/detail/detail.wxml-->
+<scroll-view>
+  <view class='h-1'><text bindtap='onClickTile'>{{title}}</text></view>
+  <view class='content' wx:for="{{news}}" wx:key="{{id}}">
+    <view>
+      <image src="{{'../../../assets/img/' + item.url}}" mode="aspectFit"></image>
+    </view>
+    <view>
+      <text class='title'>{{item.topic}}</text>
+    </view>
+    <view class="description">
+      <text>{{item.description}}</text>
+    </view>
+  </view>
+  <audio controls="true" id='myAudio' style='visibility:hidden' src='http://p3trypz19.bkt.clouddn.com/guang'></audio>
+</scroll-view>
