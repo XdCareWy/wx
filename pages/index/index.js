@@ -1,5 +1,5 @@
 //index.js
-const { BIM_LEVEL, CAD_LEVEL, BIM_APPLY } = getApp().globalData.enterType;
+const { BIM_LEVEL, CAD_LEVEL, BIM_APPLY, MY_SCORE } = getApp().globalData.enterType;
 
 Page({
   data: {
@@ -18,7 +18,10 @@ Page({
       case BIM_LEVEL:
       case CAD_LEVEL:
       case BIM_APPLY:
-        navigateUrl = '../enter/gradeEnter?id='+cardId;
+        navigateUrl = '../enter/gradeEnter?id=' + cardId;
+        break;
+      case MY_SCORE:
+        navigateUrl = '../enter/score/score';
         break;
     }
     if (navigateUrl) {

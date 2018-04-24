@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/enter/gradeEnter",
+    "pages/enter/score/score",
     "pages/logs/logs"
   ],
   "window": {

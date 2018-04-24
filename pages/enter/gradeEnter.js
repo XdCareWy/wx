@@ -71,19 +71,32 @@ Page({
       address: "请填写单位地址",
       exampleType: "选择考试类别"
     };
-    const v = e.detail.value;
-    const { name, phone, idCard, idType, address, exampleType } = v;
-    for (let k in v) {
-      let r = requireFiled.includes(k) && this.showErrorMsg(v[k], requireValue[k]);
+    const data = e.detail.value;
+    const { name, phone, idCard, idType, address, exampleType } = data;
+    for (let k in data) {
+      let r = requireFiled.includes(k) && this.showErrorMsg(data[k], requireValue[k]);
       if (!r) {
         return;
       }
     }
-    console.log(v);
+    console.log(data);
 
     wx.showModal({
       title: '表单信息',
-      content: JSON.stringify(v),
+      content: JSON.stringify(data),
     })
+    // todo: 发送请求
+    // wx.request({
+    //   url: '',
+    //   method: 'POST',
+    //   data: data,
+    //   success: function ({ data, statusCode}) {
+    //     // todo: 处理数据
+    //     console.log(statusCode, data)
+    //   },
+    //   fail: function(res) {
+    //     // todo: 处理错误
+    //   }
+    // })
   }
 })
