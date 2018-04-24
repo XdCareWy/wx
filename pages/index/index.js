@@ -1,6 +1,5 @@
 //index.js
-//获取应用实例
-const app = getApp()
+const { BIM_LEVEL, CAD_LEVEL, BIM_APPLY } = getApp().globalData.enterType;
 
 Page({
   data: {
@@ -16,8 +15,9 @@ Page({
     const cardId = event.currentTarget.id;
     let navigateUrl = "";
     switch (+cardId) {
-      case 1:
-      case 2:
+      case BIM_LEVEL:
+      case CAD_LEVEL:
+      case BIM_APPLY:
         navigateUrl = '../enter/gradeEnter?id='+cardId;
         break;
     }

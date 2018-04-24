@@ -1,5 +1,7 @@
 //app.js
 const config = require('./config.js');
+const enterType = require('./utils/constants.js')
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -47,6 +49,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    ...config
+    ...config,
+    ...enterType
   }
 })

@@ -23,11 +23,16 @@
     </view>
     <view class='section'>
       <text class='label'>单位：</text>
-      <input name='address' placeholder='请输入单位地址' />
+      <input name='address' placeholder='学校+学院+班级/工作单位' />
     </view>
     <view class='section'>
       <text class='label'>考试类别：</text>
-      <picker name='exampleType' bindchange="bindPickerChange" value="{{exampleIndex}}" range="{{exampleArray}}">
+      <checkbox-group name='exampleType' wx:if="{{exampleIndex===-1}}">
+        <label wx:for="{{exampleArray}}" wx:for-item="item" wx:key="name">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+      </checkbox-group>
+      <picker wx:else name='exampleType' bindchange="bindPickerChange" value="{{exampleIndex}}" range="{{exampleArray}}">
         <view class="picker">
           {{exampleArray[exampleIndex]}}
         </view>
@@ -40,7 +45,12 @@
   <view class='msg' wx:if="{{msgVisible}}">
     <text>{{msg}}</text>
   </view>
-  <view class='info'>
+  <view wx:if="{{exampleIndex === -1}}" class='info'>
+    <text>重要提醒：缴定金后，加qq群</text>
+    <text class='point-color'>12312</text>
+    <text>等上课通知。Revit内容按BIM等级二级大纲讲解，案例实操为用实际项目讲解。</text>
+  </view>
+  <view wx:else class='info'>
     <text>重要提醒：缴定金后，加qq群</text>
     <text class='point-color'>12312</text>
     <text>等上课通知，并登陆中国图学会网站填写详细信息和上传照片。
@@ -48,6 +58,5 @@
     <text class='point-color'>www.txh.com</text>
     <text>，考点选</text>
     <text class='point-color'>南通飞扬。</text>
-    <text></text>
   </view>
 </view>
