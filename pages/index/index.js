@@ -1,5 +1,5 @@
 //index.js
-const { BIM_LEVEL, CAD_LEVEL, BIM_APPLY, MY_SCORE } = getApp().globalData.enterType;
+const { BIM_LEVEL, CAD_LEVEL, BIM_APPLY, MY_SCORE, GROUP, MY_SUBJECT } = getApp().globalData.enterType;
 
 Page({
   data: {
@@ -22,6 +22,13 @@ Page({
         break;
       case MY_SCORE:
         navigateUrl = '../enter/score/score';
+        break;
+      case GROUP:
+      case MY_SUBJECT:
+        wx.showToast({
+          title: '暂未开放',
+          icon: "loading"
+        })
         break;
     }
     if (navigateUrl) {
