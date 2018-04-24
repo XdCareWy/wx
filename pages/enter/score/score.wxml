@@ -1,6 +1,6 @@
 <!--pages/enter/score/score.wxml-->
 <view class='container-input'>
-  <input type='text' placeholder='请输入身份证号' focus="true" bindConfirm='handleConfirm' bindblur='handleBlur' value='{{value}}' />
+  <input type='idcard' placeholder='请输入身份证号' focus="true" bindConfirm='handleConfirm' bindblur='handleBlur' value='{{value}}' />
 </view>
 <view wx:if="{{infoVisible}}">
   <view>
